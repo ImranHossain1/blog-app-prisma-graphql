@@ -3,6 +3,7 @@ export const typeDefs = `#graphql
         me: User
         users: [User]
         posts: [Post]
+        profile(userId: ID!): Profile
     }
     type Mutation {
         signup (
@@ -35,7 +36,7 @@ export const typeDefs = `#graphql
         id: ID!
         title: String!
         content: String!
-        author: String
+        author: User
         createdAt: String!
         published: Boolean!
     }
@@ -50,7 +51,7 @@ export const typeDefs = `#graphql
         id: ID!
         bio: String!
         createdAt: String!
-        user: User!
+        user: User
     }
 
 
